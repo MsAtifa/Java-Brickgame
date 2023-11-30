@@ -1,6 +1,5 @@
 package brickGame;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -36,10 +35,10 @@ public class LoadSave {
 
     public void read() {
 
-
-        try {
-            ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(new File(Main.savePath)));
-
+        final Logger LOGGER = Logger.getLogger(Main.class.getName());
+        try
+                (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(Main.savePath)))
+        {
 
             level = inputStream.readInt();
             score = inputStream.readInt();
@@ -52,6 +51,7 @@ public class LoadSave {
             xBreak = inputStream.readDouble();
             yBreak = inputStream.readDouble();
             centerBreakX = inputStream.readDouble();
+            centerBreakY = inputStream.readDouble();
             time = inputStream.readLong();
             goldTime = inputStream.readLong();
             vX = inputStream.readDouble();
@@ -73,13 +73,11 @@ public class LoadSave {
 
             try {
                 blocks = (ArrayList<BlockSerializable>) inputStream.readObject();
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+            } catch (ClassNotFoundException | IOException e) {
+                LOGGER.warning("Exception while reading blocks: " + e.getMessage());
             }
-
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.warning("Error reading saved game: " + e.getMessage());
         }
-
     }
 }
