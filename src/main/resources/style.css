@@ -1,0 +1,32 @@
+/* Use the # symbol to target the button with the id 'newGame' */
+#newGame {
+    -fx-background-color: #8FBC8F;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+}
+
+#newGame:hover {
+    -fx-background-color: #8FBC8F;
+}
+
+.root {
+    -fx-background-image: url("kittybg.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+.goldRoot {
+    -fx-background-image: url("kittybluebg.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
+
+.label {
+     -fx-text-fill: black;
+     -fx-font-family: 'Arial';
+     -fx-font-size: 15;
+     -fx-label-padding: 8px;
+}
+
