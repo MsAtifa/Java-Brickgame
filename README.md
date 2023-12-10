@@ -24,7 +24,7 @@ Attempted to expand the game beyond 18 levels resulted in noticeable glitches af
 The game only occupies half of the Java application screen, and I couldn't manage to make it go fullscreen.
 
 ### • New Java Classes:-
-The **setPhysicsToBall** method has been logically split into several distinct methods within the codebase. Each method is responsible for handling a specific aspect of the ball's physics and interactions. Here's a breakdown of how the original method was subdivided:
+-The **setPhysicsToBall** method has been logically split into several distinct methods within the codebase. Each method is responsible for handling a specific aspect of the ball's physics and interactions. Here's a breakdown of how the original method was subdivided:
 
 **1.updateBallPosition:** Manages the ball's position based on its velocity (vX and vY). It accounts for both vertical (goDownBall) and horizontal (goRightBall) movements.
 
@@ -42,12 +42,12 @@ The **setPhysicsToBall** method has been logically split into several distinct m
 
 **8.checkDestroyedCount:** Verifies if the number of destroyed blocks matches the total number of blocks in the game. If true, it indicates the completion of the level, and the nextLevel method is called.
 
-The **onUpdate** method in the code is vital for handling game visuals and collisions.The functionality within onUpdate has been split into two methods:
+-The **onUpdate** method in the code is vital for handling game visuals and collisions.The functionality within onUpdate has been split into two methods:
 
 **1.updateLabelsAndShapes Method:** Updates visual elements like score and heart labels, along with the positions of game shapes. This method maintains code cleanliness, focusing on high-level visual updates and improving readability.
 **2.handleBallBlockCollisions Method:** Manages collisions between the ball and game blocks, updating scores and handling block visibility. 
 
-The **onPhysicsUpdate** method handles various physics and game state updates. To enhance clarity and maintainability, the logic has been separated into two methods:
+-The **onPhysicsUpdate** method handles various physics and game state updates. To enhance clarity and maintainability, the logic has been separated into two methods:
 
 **1.GoldStatus Method:** Manages the gold status of the ball, handling its appearance and duration.
 **2.updateChocos Method:** Specifically handles the update of bonus items (chocos) and their interactions with the break object. 
@@ -56,7 +56,7 @@ I tried making the above metioned methods which is located in the main file into
 
 
 ### • Modified Java Classes:-
-The changes made to the **Score** class involve refactoring the code to improve readability, maintainability, and consistency. Here's an explanation of the modifications:
+-The changes made to the **Score** class involve refactoring the code to improve readability, maintainability, and consistency. Here's an explanation of the modifications:
 
 **1. Introduction of animateLabel Method:** A new private method animateLabel is introduced to encapsulate the common logic for animating a label. This method uses JavaFX's FadeTransition to smoothly fade out a label over a specified duration.
 
@@ -64,7 +64,7 @@ The changes made to the **Score** class involve refactoring the code to improve 
    
 **3. Button Event Handling:** In the showGameOver and showWin methods, the event handling for the restart button is now implemented using lambda expressions, making the code more concise.
 
-The refactoring of the **GameEngine** class involves several changes aimed at improving code readability, maintainability, and introducing better concurrency handling. Here's an explanation of the key modifications:
+-The refactoring of the **GameEngine** class involves several changes aimed at improving code readability, maintainability, and introducing better concurrency handling. Here's an explanation of the key modifications:
 
 **1. Concurrency Handling with ScheduledExecutorService:** The original code used basic threads for updating, physics calculations, and time counting. In the refactored version, a ScheduledExecutorService is employed for better concurrency control. It simplifies the scheduling of tasks with fixed-rate execution, making the code more robust and avoiding potential issues with thread interruptions.
  
