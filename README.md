@@ -1,5 +1,5 @@
 # COMP2042_CW_szyam1
-###BrickGame
+### BrickGame
 
 The main goal of Brick Breaker is to eliminate all the bricks on the screen by using a bouncing ball and controlling a paddle at the bottom with left and right arrow keys. The paddle's role is to deflect the ball and prevent it from falling off the screen. Players earn points for breaking each brick. If the ball hits the star block, it enters a golden period where hitting the bottom doesn't result in a score loss. Hitting the chocolate block provides a chance to score +3 by claiming the bonus. The heart block grants extra lives to continue playing, as losing all hearts results in a game over. The game consists of 8 levels and is themed around Hello Kitty.
 
