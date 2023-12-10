@@ -1,15 +1,16 @@
 # COMP2042_CW_szyam1
-BrickGame
+###BrickGame
+
 The main goal of Brick Breaker is to eliminate all the bricks on the screen by using a bouncing ball and controlling a paddle at the bottom with left and right arrow keys. The paddle's role is to deflect the ball and prevent it from falling off the screen. Players earn points for breaking each brick. If the ball hits the star block, it enters a golden period where hitting the bottom doesn't result in a score loss. Hitting the chocolate block provides a chance to score +3 by claiming the bonus. The heart block grants extra lives to continue playing, as losing all hearts results in a game over. The game consists of 8 levels and is themed around Hello Kitty.
 
-•Compilation Instructions:-
+**•Compilation Instructions:-**
 1.Open your preferred IDE (e.g., IntelliJ IDEA, Eclipse).
 2. Import the project into the IDE.
 3. Build the project using the IDE's build or compile option.
 4. To run the application, find and execute the main class: com.example.brickgame.HelloApplication.
 (Note: I have worked in IntelliJ IDEA using Maven as the building tool)
 
-• Implemented and Working Properly: 
+**• Implemented and Working Properly:**
 -The GameEngine class now features a functional pause mechanism triggered by the 'p' key. Invoking the "togglePause" method toggles the 'isPaused' boolean variable, determining whether the game engine should consider updates and physics calculations during scheduled tasks. This togglePause method is linked to the 'p' key press event in the main file. When 'isPaused' is set to true, the update and physicsCalculation tasks refrain from executing the onUpdate or onPhysicsUpdate methods, effectively pausing the game logic. Conversely, when 'isPaused' is set to false, the tasks proceed with the execution of these methods. This dynamic functionality allows the game engine to seamlessly pause and resume processing based on the state of the 'isPaused' variable.
 
 -Additionally, improvements were made to the scoring system to address glitches in the display of scores and hearts. The implementation of JavaFX's FadeTransition contributes to a visually appealing animation, ensuring smooth transitions as score labels fade in and out. The use of Platform.runLater ensures that UI updates occur on the JavaFX Application Thread, preserving thread safety and preventing potential concurrency issues.Moreover, the showMessage method introduces a delay using a separate thread before initiating the fade-out animation. This ensures messages are displayed for a specific duration, offering clear communication to the player without abrupt removal of information.
@@ -17,9 +18,9 @@ The main goal of Brick Breaker is to eliminate all the bricks on the screen by u
 -Furthermore, a "Play Again" button has been implemented, appearing upon completion of all 8 levels. Clicking this button resets all game components. The overall appearance of the game, including fonts and colors of texts and buttons, has been revamped for a more polished and cohesive visual design. Adjusted the golden period time as well.
 • Implemented but Not Working Properly: Attempted to expand the game beyond 18 levels resulted in noticeable glitches after level 12. Issues arose with the proper counting of hearts, sudden game overs when the ball hit the bottom, and malfunctioning behavior of the gold ball. Subsequently, I addressed these challenges by refining the game engine and opting to maintain the number of levels at 8. This adjustment was made to ensure the seamless functioning of all game components.
 
-• Features Not Implemented: The game only occupies half of the Java application screen, and I couldn't manage to make it go fullscreen.
+**• Features Not Implemented:** The game only occupies half of the Java application screen, and I couldn't manage to make it go fullscreen.
 
-• New Java Classes:-
+**• New Java Classes:-**
 The "setPhysicsToBall" method has been logically split into several distinct methods within the codebase. Each method is responsible for handling a specific aspect of the ball's physics and interactions. Here's a breakdown of how the original method was subdivided:
 
 1.updateBallPosition: Manages the ball's position based on its velocity (vX and vY). It accounts for both vertical (goDownBall) and horizontal (goRightBall) movements.
@@ -51,7 +52,7 @@ The "onPhysicsUpdate" method handles various physics and game state updates. To 
 I tried making the above metioned methods which is located in the main file into different classes but it kept giving mulitthreading issues , so instead i refactored and split the methods in the main file itself for better organization and readabitlity.
 
 
-• Modified Java Classes:-
+**• Modified Java Classes:-**
 The changes made to the "Score" class involve refactoring the code to improve readability, maintainability, and consistency. Here's an explanation of the modifications:
 
 1. Introduction of animateLabel Method: A new private method animateLabel is introduced to encapsulate the common logic for animating a label. This method uses JavaFX's FadeTransition to smoothly fade out a label over a specified duration.
@@ -72,4 +73,4 @@ The refactoring of the "GameEngine" class involves several changes aimed at impr
 
 5.Removal of Unnecessary Time Thread: The time counting logic is now incorporated directly into the physicsCalculation task, eliminating the need for a separate time thread. This simplifies the code and avoids potential synchronization issues.
 
-• Unexpected Problems: During gameplay, if the paddle does not move constantly and the ball hits the bottom, the game abruptly ends. Similarly, when using the gold ball, it may exhibit glitches near the bottom, temporarily exiting the lower boundary and reappearing if there is no continuous movement of the paddle.
+**• Unexpected Problems:** During gameplay, if the paddle does not move constantly and the ball hits the bottom, the game abruptly ends. Similarly, when using the gold ball, it may exhibit glitches near the bottom, temporarily exiting the lower boundary and reappearing if there is no continuous movement of the paddle.
