@@ -47,11 +47,13 @@ The game only occupies half of the Java application screen, and I couldn't manag
 -The **onUpdate** method in the code is vital for handling game visuals and collisions.The functionality within onUpdate has been split into two methods:
 
 **1.updateLabelsAndShapes Method:** Updates visual elements like score and heart labels, along with the positions of game shapes. This method maintains code cleanliness, focusing on high-level visual updates and improving readability.
+
 **2.handleBallBlockCollisions Method:** Manages collisions between the ball and game blocks, updating scores and handling block visibility. 
 
 -The **onPhysicsUpdate** method handles various physics and game state updates. To enhance clarity and maintainability, the logic has been separated into two methods:
 
 **1.GoldStatus Method:** Manages the gold status of the ball, handling its appearance and duration.
+
 **2.updateChocos Method:** Specifically handles the update of bonus items (chocos) and their interactions with the break object. 
 
 I tried making the above metioned methods which is located in the main file into different classes but it kept giving mulitthreading issues , so instead i refactored and split the methods in the main file itself for better organization and readabitlity.
