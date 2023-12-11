@@ -11,7 +11,7 @@ The main goal of Brick Breaker is to eliminate all the bricks on the screen by u
 (Note: I have worked in IntelliJ IDEA using Maven as the building tool)
 
 ### • Implemented and Working Properly:-
--The **GameEngine** class now features a functional pause mechanism triggered by the 'p' key. Invoking the "togglePause" method toggles the 'isPaused' boolean variable, determining whether the game engine should consider updates and physics calculations during scheduled tasks. This togglePause method is linked to the 'p' key press event in the main file. When 'isPaused' is set to true, the update and physicsCalculation tasks refrain from executing the onUpdate or onPhysicsUpdate methods, effectively pausing the game logic. Conversely, when 'isPaused' is set to false, the tasks proceed with the execution of these methods. This dynamic functionality allows the game engine to seamlessly pause and resume processing based on the state of the 'isPaused' variable.
+-The **GameEngine** is equipped with a 'toggle pause' method that is employed in the main file. It serves to either resume the game or even the game could be restarted based on the button selected in the pause menu, which becomes visible upon pressing the 'P' key.
 
 -Additionally, improvements were made to the scoring system to address glitches in the display of scores and hearts. The implementation of JavaFX's FadeTransition contributes to a visually appealing animation, ensuring smooth transitions as score labels fade in and out. The use of Platform.runLater ensures that UI updates occur on the JavaFX Application Thread, preserving thread safety and preventing potential concurrency issues.Moreover, the showMessage method introduces a delay using a separate thread before initiating the fade-out animation. This ensures messages are displayed for a specific duration, offering clear communication to the player without abrupt removal of information.
 
@@ -24,6 +24,8 @@ Attempted to expand the game beyond 18 levels resulted in noticeable glitches af
 The game only occupies half of the Java application screen, and I couldn't manage to make it go fullscreen.
 
 ### • New Java Classes:-
+-The **PauseMenu** class is a JavaFX component designed for creating a simple pause menu in a game. It utilizes the JavaFX Alert class to display a confirmation dialog with options for resuming or restarting the game.It includes buttons for "Resume," "Restart," and "Cancel." Upon user interaction, the chosen option is processed via a provided Consumer<String> choiceHandler. The pause menu pops up if the 'p' key is clicked and the game gets paused before the pause menu pops up. This is the only additional class added, the rest of the important methods were just refactored in the main file.
+
 -The **setPhysicsToBall** method has been logically split into several distinct methods within the codebase. Each method is responsible for handling a specific aspect of the ball's physics and interactions. Here's a breakdown of how the original method was subdivided:
 
 **1.updateBallPosition:** Manages the ball's position based on its velocity (vX and vY). It accounts for both vertical (goDownBall) and horizontal (goRightBall) movements.
@@ -77,4 +79,4 @@ I tried making the above metioned methods which is located in the main file into
 **5.Removal of Unnecessary Time Thread:** The time counting logic is now incorporated directly into the physicsCalculation task, eliminating the need for a separate time thread. This simplifies the code and avoids potential synchronization issues.
 
 ### • Unexpected Problems-
-During gameplay, if the paddle does not move constantly and the ball hits the bottom, the game abruptly ends. Similarly, when using the gold ball, it may exhibit glitches near the bottom, temporarily exiting the lower boundary and reappearing if there is no continuous movement of the paddle.
+During gameplay, if the paddle does not move constantly and the ball hits the bottom, the game abruptly ends. Similarly, when using the gold ball, it may exhibit glitches near the bottom, temporarily exiting the lower boundary and reappearing if there is no continuous movement of the paddle. Furthermore, the ball hits only the top, bottom, left or right side of the block, so sometimes it can pass through the blocks.
