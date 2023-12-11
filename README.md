@@ -5,11 +5,8 @@ The main goal of Brick Breaker is to eliminate all the bricks on the screen by u
 
 ### •Compilation Instructions:-
 1.Open your preferred IDE (e.g., IntelliJ IDEA, Eclipse).
-
 2. Import the project into the IDE.
-   
 3. Build the project using the IDE's build or compile option.
-   
 4. To run the application, find and execute the main class.
 (Note: I have worked in IntelliJ IDEA using Maven as the building tool)
 
