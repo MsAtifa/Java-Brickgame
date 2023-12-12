@@ -12,6 +12,8 @@ The main goal of Brick Breaker is to eliminate all the bricks on the screen by u
 
 ### • Implemented and Working Properly:-
 -The **GameEngine** is equipped with a 'toggle pause' method that is employed in the main file. It serves to either resume the game or even the game could be restarted based on the button selected in the pause menu, which becomes visible upon pressing the 'P' key.
+![image](https://github.com/MsAtifa/COMP2042_CW_szyam1/assets/152516802/bcdcd882-5890-4e1b-994f-485c1c593d75)
+
 
 -Additionally, improvements were made to the scoring system to address glitches in the display of scores and hearts. The implementation of JavaFX's FadeTransition contributes to a visually appealing animation, ensuring smooth transitions as score labels fade in and out. The use of Platform.runLater ensures that UI updates occur on the JavaFX Application Thread, preserving thread safety and preventing potential concurrency issues.Moreover, the showMessage method introduces a delay using a separate thread before initiating the fade-out animation. This ensures messages are displayed for a specific duration, offering clear communication to the player without abrupt removal of information.
 
