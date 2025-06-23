@@ -2,8 +2,6 @@
 ## BrickGame
 
 The main goal of Brick Breaker is to eliminate all the bricks on the screen by using a bouncing ball and controlling a paddle at the bottom with left and right arrow keys. The paddle's role is to deflect the ball and prevent it from falling off the screen. Players earn points for breaking each brick. If the ball hits the star block, it enters a golden period where hitting the bottom doesn't result in a score loss. Hitting the chocolate block provides a chance to score +3 by claiming the bonus. The heart block grants extra lives to continue playing, as losing all hearts results in a game over. The game consists of 8 levels and is themed around Hello Kitty.
-![main page](https://github.com/MsAtifa/COMP2042_CW_szyam1/assets/152516802/2acb1145-1126-47d9-b6c3-8991825da71e)
-
 
 ### •Compilation Instructions:-
 1.Open your preferred IDE (e.g., IntelliJ IDEA, Eclipse).
@@ -14,18 +12,10 @@ The main goal of Brick Breaker is to eliminate all the bricks on the screen by u
 
 ### • Implemented and Working Properly:-
 -The **GameEngine** is equipped with a 'toggle pause' method that is employed in the main file. It serves to either resume the game or even the game could be restarted based on the button selected in the pause menu, which becomes visible upon pressing the 'P' key.
-![image](https://github.com/MsAtifa/COMP2042_CW_szyam1/assets/152516802/bcdcd882-5890-4e1b-994f-485c1c593d75)
-
 
 -Additionally, improvements were made to the scoring system to address glitches in the display of scores and hearts. The implementation of JavaFX's FadeTransition contributes to a visually appealing animation, ensuring smooth transitions as score labels fade in and out. The use of Platform.runLater ensures that UI updates occur on the JavaFX Application Thread, preserving thread safety and preventing potential concurrency issues.Moreover, the showMessage method introduces a delay using a separate thread before initiating the fade-out animation. This ensures messages are displayed for a specific duration, offering clear communication to the player without abrupt removal of information.
 
 -Furthermore, a "Play Again" button has been implemented in the showWin methid in score class, appearing upon completion of all 8 levels. Clicking this button resets all game components. The overall appearance of the game, including fonts and colors of texts and buttons, has been revamped for a more polished and cohesive visual design. Adjusted the golden period time as well in the main file and changed its background.
-
-![playagain button](https://github.com/MsAtifa/COMP2042_CW_szyam1/assets/152516802/51478626-9857-4e8c-b322-35df5fcab205)
-
-![blue bg page](https://github.com/MsAtifa/COMP2042_CW_szyam1/assets/152516802/7cef8cfa-ce42-4ab3-8bf7-4992392114fe)
-
-
 
 ### • Implemented but Not Working Properly:- 
 Attempted to expand the game beyond 18 levels resulted in noticeable glitches after level 12. Issues arose with the proper counting of hearts, sudden game overs when the ball hit the bottom, and malfunctioning behavior of the gold ball. Subsequently, I addressed these challenges by refining the game engine and opting to maintain the number of levels at 8. This adjustment was made to ensure the seamless functioning of all game components.
